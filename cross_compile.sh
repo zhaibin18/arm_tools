@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # cross & static compile shadowsocks-libev
 
@@ -35,7 +35,7 @@ compile_pcre() {
     wget --no-check-certificate $PCRE_FILE
     tar xvf pcre-$PCRE_VER.tar.gz
     cd pcre-$PCRE_VER
-    ./configure --prefix=$prefix/pcre --host=$host --enable-utf8 --enable-unicode-properties --disable-shared
+    ./configure --prefix=$prefix/pcre --host=$host --enable-utf8 --enable-unicode-properties --disable-shared --disable-cpp
     make -j$(getconf _NPROCESSORS_ONLN) && make install
 }
 
